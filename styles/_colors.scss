@@ -1,0 +1,9 @@
+$colors: (main: #84A4BF,
+  snd: #D95F69,
+);
+
+@function clr($color_name) {
+  @return map-get($colors, $color_name)
+}
+
+;

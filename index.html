@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/hamburger.css">
+  <link rel="shortcut icon" type="image/png" href="assets/favicon-32x32.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="styles/script.js"></script>
+  <script src="https://kit.fontawesome.com/4af0f65b6d.js" crossorigin="anonymous"></script>
+  <script defer src="smoothscroll.min.js"></script>
+  <title>Graveyard Shift</title>
+</head>
+<body>
+  <button onclick="toTop()" id="toTop" title="Go to top"><i class="fas fa-angle-up"></i></button>
+  <a id="top"></a>
+  <!-- Non mobile navigation bar -->
+  <nav id="navigation" class="navbar">
+    <div class="links">
+      <a data-scroll href="#top" onclick="toSection('#top')" class="imageLink"><img src="assets/graveyard_shift.png" id="logo"/></a>
+      <a data-scroll href="#aboutWrapper" onclick="toSection('#aboutWrapper')" class="textLinks">About</a>
+      <a data-scroll href="#featuresWrapper" onclick="toSection('#featuresWrapper')" class="textLinks">Features</a>
+      <a data-scroll href="https://drive.google.com/file/d/1YSyRNJobBdVAIuDRR82i9GOK-I53Qs5H/view?usp=sharing" class="textLinks">Manual</a>
+      <a data-scroll href="#imagesWrapper" class="textLinks">Gallery</a>
+      <a data-scroll href="#teamWrapper" onclick="toSection('#teamWrapper')" class="textLinks">Team</a>
+
+      <audio autoplay loop src="assets/music_menu.ogg" type="audio/ogg" id="audioId">
+        Your browser does not support the audio element.
+      </audio>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <button class="soundButton">
+        <img src="assets/music-note-in-a-circle.svg" id="soundIcon" onclick="playPauseMusic()" />
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile navigation bar -->
+  <div class="mobileNavBar">
+    <div class="mobileBackground">
+    </div>
+    <div class="mobile">
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input id="check" type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a class="mobileLink" data-scroll href="#aboutWrapper" onclick="toSection('#aboutWrapper')"><li>About</li></a>
+            <a class="mobileLink" data-scroll href="#featuresWrapper" onclick="toSection('#featuresWrapper')"><li>Features</li></a>
+            <a class="mobileLink" data-scroll href="https://drive.google.com/file/d/1YSyRNJobBdVAIuDRR82i9GOK-I53Qs5H/view?usp=sharing"><li>Manual</li></a>
+            <a class="mobileLink" data-scroll href="#imagesWrapper" onclick="toSection('#imagesWrapper')"><li>Gallery</li></a>
+            <a class="mobileLink" data-scroll href="#teamWrapper" onclick="toSection('#teamWrapper')"><li>Team</li></a>
+          </ul>
+        </div>
+      </nav>
+      <img src="assets/graveyard_shift.png" id="mobileLogo"/>
+    </div>
+  </div>
+  <div id="mobileOverlay">
+  </div>
+  <div class="contents">
+    <!-- Non mobile version  -->
+    <div id="mainBanner">
+      <br/>
+      <br/>
+      <img src="assets/banner.png" id="bannerImage"/>
+      <br/>
+      <br/>
+      <br/>
+      <div id="downloadButtons">
+        <a href="https://github.com/marcoseiza/GraveyardShiftWebsite/raw/master/apps/GraveyardShiftWindows.zip" target="_blank" rel="noopener noreferrer"><img src="assets/windows.png" id="windowsDownload"/></a>
+        <a href="https://github.com/marcoseiza/GraveyardShiftWebsite/raw/master/apps/GraveyardShiftMac.zip" target="_blank" rel="noopener noreferrer"><img src="assets/mac.png" id="macDownload"/></a>
+      </div>
+    </div>
+
+    <!-- Mobile version  -->
+    <div id="mobileBanner">
+      <img src="assets/steve_head.png" id="mobileBannerImage"/>
+      <br/>
+      <img src="assets/mobile_mac.png" onclick="window.open('https://github.com/marcoseiza/GraveyardShiftWebsite/raw/master/apps/GraveyardShiftMac.zip')" id="mobileMacDownload"/>
+      <br/>
+      <img src="assets/mobile_windows.png" onclick="window.open('https://github.com/marcoseiza/GraveyardShiftWebsite/raw/master/apps/GraveyardShiftWindows.zip')" id="mobileWindowsDownload"/>
+      <br/>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div id="aboutWrapper" class="scrollOffset">
+      <div id="about">
+        <h2 id="aboutHeader">About</h2>
+        <video class="aboutVideo" controls>
+          <source src="assets/trailer.mp4" type="video/mp4" controls>
+        Your browser does not support videos.
+        </video>
+        <div id="aboutText">
+          <br/>
+          <br/>
+          <div>
+            <p>
+              After an underground military lab experiment goes horribly wrong, Steve the Janitor stirs from a long nap to an eerie silence.
+            </p>
+            <br/>
+            <p>
+            Guide Steve to the surface, evading the mutant test subjects that can hear—but not see—everything he does.
+            </p>
+          </div>
+        </div>
+      </div>
+    <div id="mobileAbout">
+      <h2 id="mobileAboutHeader">About</h2>
+      <video class="aboutVideo" controls>
+        <source src="assets/trailer.mp4" type="video/mp4" controls>
+      Your browser does not support videos.
+      </video>
+      <br/>
+      <div id="mobileAboutText">
+        <p>
+          After an underground military lab experiment goes horribly wrong, Steve the Janitor stirs from a long nap to an eerie silence.
+        </p>
+        <p>
+          Guide Steve to the surface, evading the mutant test subjects that can hear—but not see—everything he does.
+        </p>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div id="featuresWrapper" class="scrollOffset">
+  <!-- Mobile feature section -->
+    <div id="mobileFeatures">
+      <h2 id="mobileFeatureHeader">Features</h2>
+      <div class="featureRow">
+        <img src="assets/staircase_website.png"/>
+        <br/>
+        <p id="featureRowHeader">
+          Reach the staircase
+        </p>
+        <p>
+          Slip through the floor and up the staircase to reach the ground level.
+        </p>
+      </div>
+      <div class="featureRow">
+        <img src="assets/quiet_website.png"/>
+        <br/>
+        <p id="featureRowHeader">
+          Keep quiet!
+        </p>
+        <p>
+          Tiptoe through corridors while monitoring your footsteps.
+        </p>
+      </div>
+      <div class="featureRow">
+        <img src="assets/items_website.png"/>
+        <br/>
+        <p id="featureRowHeader">
+          Use items strategically
+        </p>
+        <p>
+          Manage your resources, exploit your surroundings, and plan ahead!
+        </p>
+      </div>
+    </div>
+  <!-- Non-mobile feature section -->
+    <div id="features">
+      <h2 id="featureHeader">Features</h2>
+      <div class="featureRow">
+        <img src="assets/staircase_website.png"/>
+        <br/>
+        <p id="featureRowHeader">
+          Reach the staircase
+        </p>
+        <p >
+          Slip through the floor and up the staircase to reach the ground level.
+        </p>
+      </div>
+      <div class="featureRow">
+        <img src="assets/quiet_website.png"/>
+        <br/>
+        <p id="featureRowHeader">
+          Keep quiet!
+        </p>
+        <p>
+          Tiptoe through corridors while monitoring your footsteps.
+        </p>
+      </div>
+      <div class="featureRow">
+        <img src="assets/items_website.png"/>
+        <br/>
+        <p id="featureRowHeader">
+          Use items strategically
+        </p>
+        <p>
+          Manage your resources, exploit your surroundings, and plan ahead!
+        </p>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div id="imagesWrapper" class="scrollOffset">
+    <!-- Non-mobile gallery section -->
+    <div id="images">
+      <h2 id="galleryHeader">Gallery</h2>
+      <div class="row">
+        <div class="column">
+          <a href="assets/gallery/dialogue.png"><img src="assets/gallery/dialogue.png" style="width:100%"></a>
+          <a href="assets/gallery/dialogue.png"><img src="assets/gallery/mutants.png" style="width:100%"></a>
+        </div>
+        <div class="column">
+          <a href="assets/gallery/come_play.png"><img src="assets/gallery/come_play.png" style="width:100%"></a>
+          <a href="assets/gallery/characters.png"><img src="assets/gallery/characters.png" style="width:100%"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile gallery section -->
+    <div id="mobileImages">
+      <h2 id="mobileGalleryHeader">Gallery</h2>
+      <div class="row">
+        <div class="column">
+          <a href="assets/gallery/dialogue.png"><img src="assets/gallery/dialogue.png" style="width:100%"></a>
+          <a href="assets/gallery/dialogue.png"><img src="assets/gallery/mutants.png" style="width:100%"></a>
+        </div>
+        <div class="column">
+          <a href="assets/gallery/come_play.png"><img src="assets/gallery/come_play.png" style="width:100%"></a>
+          <a href="assets/gallery/characters.png"><img src="assets/gallery/characters.png" style="width:100%"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div id="teamWrapper" class="scrollOffset">
+    <!-- Mobile team section -->
+    <div id="mobileTeam">
+      <h2 id="teamHeader">Team</h2>
+      <div class="teamRow">
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/marcos.png"/>
+          </div>
+          <h4>Marcos Eizayaga</h4>
+          <span>Project Lead</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/jonathan.png"/>
+          </div>
+          <h4>Jonathan Gomez</h4>
+          <span>Software Lead</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/amy.png"/>
+          </div>
+          <h4>Amy Wang</h4>
+          <span>Design Lead</span>
+        </div>
+      </div>
+      <div class="teamRow">
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/mitchell.png"/>
+          </div>
+          <h4>Mitchell Lin</h4>
+          <span>Programmer/designer</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/isaac.png"/>
+          </div>
+          <h4>Isaac Newcomb</h4>
+          <span>Sound Designer</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/silhouette.png"/>
+          </div>
+          <h4>Judy Ng</h4>
+          <span>Programmer</span>
+        </div>
+      </div>
+      <div class="teamRow">
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/will.png"/>
+          </div>
+          <h4>Will Spencer</h4>
+          <span>Programmer</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/eli.png"/>
+          </div>
+          <h4>Eli Zhang</h4>
+          <span>Programmer</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/silhouette.png"/>
+          </div>
+          <h4>Elaine Zheng</h4>
+          <span>Programmer</span>
+        </div>
+      </div>
+    </div>
+    <!-- Non mobile team section-->
+    <div id="team">
+      <h2 id="teamHeader">Team</h2>
+      <div class="teamRow">
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/marcos.png"/>
+          </div>
+          <h4>Marcos Eizayaga</h4>
+          <span>Project Lead</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/jonathan.png"/>
+          </div>
+          <h4>Jonathan Gomez</h4>
+          <span>Software Lead</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/amy.png"/>
+          </div>
+          <h4>Amy Wang</h4>
+          <span>Design Lead</span>
+        </div>
+      </div>
+      <div class="teamRow">
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/mitchell.png"/>
+          </div>
+          <h4>Mitchell Lin</h4>
+          <span>Programmer/designer</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/isaac.png"/>
+          </div>
+          <h4>Isaac Newcomb</h4>
+          <span>Sound Designer</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/silhouette.png"/>
+          </div>
+          <h4>Judy Ng</h4>
+          <span>Programmer</span>
+        </div>
+      </div>
+      <div class="teamRow">
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/will.png"/>
+          </div>
+          <h4>Will Spencer</h4>
+          <span>Programmer</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/eli.png"/>
+          </div>
+          <h4>Eli Zhang</h4>
+          <span>Programmer</span>
+        </div>
+        <div class="member">
+          <div class="pic">
+            <img src="assets/team/silhouette.png"/>
+          </div>
+          <h4>Elaine Zheng</h4>
+          <span>Programmer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br/>
+  <br/>
+  <span id="copyright">Oops! All Programmers &copy; 2021<span>
+  <br/>
+  <br/>
+  <script src="styles/toTopButton.js"></script>
+</body>
+</html>
